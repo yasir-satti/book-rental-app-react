@@ -5,11 +5,17 @@ import "react-datepicker/dist/react-datepicker.css";
 function Datepicker() {
   const [date, setDate] = useState(new Date());
 
-  function onChange(date) {
-    setDate(date);
-  }
+  // const { setField } = this.props.setField
 
-  return <DatePicker selected={date} onChange={onChange} />;
+  // function handleChange(date) {
+  //   console.log("Datepicker: dateOfBirthField...", date)
+  //   setDate(date);
+  //   // this.props.setField("dateOfBirth", date)
+  //   this.props.setField("dateOfBirthField", date)
+  // }
+
+  // return <DatePicker dateFormat="dd/MM/yyyy" selected={date} onChange={handleChange} />
+  return <DatePicker dateFormat="dd/MM/yyyy" selected={date} onChange={() => this.props.setField("dateOfBirthField", date)} />
 }
 
 export default Datepicker;

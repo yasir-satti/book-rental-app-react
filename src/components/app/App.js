@@ -6,14 +6,14 @@ import "../app/App.css";
 import "../app/App.scss";
 
 import Datepicker from "../app/DatePicker";
-import PasswordStrengthBar from "react-password-strength-bar"; 
-
+import PasswordStrengthBar from "react-password-strength-bar";
 
 const App = () => {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
 
   const setField = (field, value) => {
+    console.log("field.. ", field, "; value... ", value)
     setForm({
       ...form,
       [field]: value,
@@ -23,13 +23,14 @@ const App = () => {
         ...errors,
         [field]: null,
       });
-  }
+  };
 
   const findFormErrors = () => {
     const {
       firstName,
       middleNames,
       surName,
+      dateOfBirth,
       email,
       retypeEmail,
       address1,
@@ -38,7 +39,7 @@ const App = () => {
       postcode,
       password,
       retypePassword,
-    } = form
+    } = form;
 
     const isEmailValid = (emailValue) => {
       const emailRegex =
@@ -67,6 +68,11 @@ const App = () => {
     } else {
       if (surName.length > 30)
         newErrors.surName = "name must be 30 characters or less";
+    }
+
+    if (true) {
+      console.log("FindErrors: Date of birth selected...", dateOfBirth);
+      newErrors.dateOfBirth = "date of brith is worng!";
     }
 
     if (email === "") {
@@ -119,7 +125,7 @@ const App = () => {
     if (password === "") {
       newErrors.password = "Cannot be blank";
     }
-    
+
     if (retypeEmail === "") {
       newErrors.retypePassword = "Cannot blank";
     } else {
@@ -128,7 +134,7 @@ const App = () => {
     }
 
     return newErrors;
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -138,8 +144,8 @@ const App = () => {
     } else {
       alert("Thank you for your registration");
     }
-  }
-  
+  };
+
   return (
     <>
       <link
@@ -230,7 +236,16 @@ const App = () => {
           <Row>
             <Form.Group className="mb-3" controlId="DateOfBirth">
               <Form.Label>Enter date of birth</Form.Label>
-              <Datepicker />
+              <Datepicker
+                data-testid="enterDateOfBirth"
+                // onChange={(e) => { setField("dateOfBirth", e.target.value)} }
+                // dateOfBirthField="dateOfBirth"
+                handleChangeProps={{setField}}
+                isInvalid={!!errors.dateOfBirth}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.dateOfBirth}
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
 
@@ -374,7 +389,7 @@ const App = () => {
         </Form>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default App;
