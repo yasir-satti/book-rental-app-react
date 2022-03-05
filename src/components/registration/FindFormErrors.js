@@ -1,17 +1,19 @@
-const FindFormErrors = (
-	firstName,
-	middleNames,
-	surName,
-	dateOfBirth,
-	email,
-	retypeEmail,
-	address1,
-	address2,
-	cityTown,
-	postcode,
-	password,
-	retypePassword,
-) => {
+const FindFormErrors = (form) => {
+		const {
+		  firstName,
+		  middleNames,
+		  surName,
+		  dateOfBirth,
+		  email,
+		  retypeEmail,
+		  address1,
+		  address2,
+		  cityTown,
+		  postcode,
+		  password,
+		  retypePassword,
+		} = form;
+
 	function isPasswordLengthEightOrMore(str) {
 		return !(str.length < 8);
 	}
