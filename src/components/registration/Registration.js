@@ -1,14 +1,14 @@
 import { Button, Col, Form, Image, Row } from 'react-bootstrap';
 import { useState } from 'react';
+import axios from "axios";
 
 import splash_image from '../../assets/image_book.jpeg';
 import '../app/App.css';
 import '../app/App.scss';
 
+import findFormErrors from './FindFormErrors';
 import Datepicker from './DatePicker';
 import PasswordStrengthMeter from './PassowrdStrengthMeter';
-
-import HandleSubmit from './HandleSubmit';
 
 const Registration = () => {
 	const [form, setForm] = useState({});
@@ -31,16 +31,49 @@ const Registration = () => {
 			});
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const newErrors = findFormErrors(form);
+		if (Object.keys(newErrors).length > 0) {
+		  setErrors(newErrors);
+		  console.log(newErrors);
+		} else {
+		  alert("Thank you for your registration");
+		  const registrationUrl = "http://localhost:8080/api/registration";
+		  const registrationData = {
+			firstName: form.firstName,
+			middleNames: form.middleNames,
+			surName: form.surName,
+			email: form.email,
+			address1: form.address1,
+			address2: form.address2,
+			cityTown: form.cityTown,
+			postcode: form.postcode,
+			password: form.password,
+		  };
+		  axios.post(registrationUrl, registrationData).then((response) => {
+			if (response.data != null) {
+			  console.log(registrationData);
+			  alert("Registration data posting was successful!");
+			  console.log("Posting response .... ", response);
+			} else {
+			  alert("Registration data posting ERROR!");
+			  console.log(response.data);
+			}
+		  });
+		}
+	  };
+
 	return (
 		<>
 			<link
 				rel="stylesheet"
 				href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 				integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-				crossorigin="anonymous"
+				crossOrigin="anonymous"
 			/>
 			<>
-				<meta charset="utf-8"></meta>
+				<meta charSet="utf-8"></meta>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1"
@@ -51,12 +84,12 @@ const Registration = () => {
 				<script
 					src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
 					integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-					crossorigin="anonymous"
+					crossOrigin="anonymous"
 				></script>
 				<script
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 					integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-					crossorigin="anonymous"
+					crossOrigin="anonymous"
 				></script>
 
 				<Image src={splash_image} fluid alt="logo" />
@@ -64,7 +97,7 @@ const Registration = () => {
 
 				<p>Register</p>
 
-				<Form data-testid="form" onSubmit={HandleSubmit(form, setErrors)}>
+				<Form data-testid="form" onSubmit={handleSubmit}>
 					<Row>
 						<Col xs="auto">
 							<Form.Group className="mb-3" controlId="formFirstName">
