@@ -1,4 +1,4 @@
-name: lint
+name: lintTest
 
 on: [push, pull_request]
 
@@ -13,7 +13,7 @@ jobs:
              node-version: 14.x
       - name: npm ci
         run: npm ci
-      - name: npm lint
-        run: npm lint
-      - name: npm test
-        run: npm test
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm run test
