@@ -166,7 +166,7 @@ const Registration = () => {
 							<Datepicker
 								data-testid="enterDateOfBirth"
 								// onChange={(e) => { setField("dateOfBirth", e.target.value)} }
-								// handleChangeProps={setField}
+								// handleChangeProps={setField} 
 								// handleChangeProps{ (e) => { setField("dateOfBirth", e.target.value) }}
 								isInvalid={!!errors.dateOfBirth}
 							/>
