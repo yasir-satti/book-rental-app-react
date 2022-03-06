@@ -43,7 +43,6 @@
 		"html-webpack-plugin": "4.5.0",
 		"identity-obj-proxy": "3.0.0",
 		"jest": "26.6.0",
-		"jest-circus": "26.6.0",
 		"jest-resolve": "26.6.0",
 		"jest-watch-typeahead": "0.6.1",
 		"mini-css-extract-plugin": "0.11.3",
@@ -135,7 +134,7 @@
 			"<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
 		],
 		"testEnvironment": "jsdom",
-		"testRunner": "/Users/yasirsatti/github/excercises/book-rental-app-react/node_modules/jest-circus/runner.js",
+		"testRunner": "jest-circus/runner.js",
 		"transform": {
 			"^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
 			"^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -180,6 +179,7 @@
 		"eslint-plugin-cypress": "^2.12.1",
 		"eslint-plugin-testcafe": "^0.2.1",
 		"husky": "^7.0.4",
+		"jest-circus": "^26.6.0",
 		"lint-staged": "^12.3.3",
 		"prettier": "^2.5.1",
 		"testcafe": "^1.18.3",

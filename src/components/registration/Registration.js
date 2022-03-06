@@ -36,7 +36,6 @@ const Registration = () => {
 		const newErrors = findFormErrors(form);
 		if (Object.keys(newErrors).length > 0) {
 		  setErrors(newErrors);
-		  console.log(newErrors);
 		} else {
 		  alert("Thank you for your registration");
 		  const registrationUrl = "http://localhost:8080/api/registration";
@@ -55,10 +54,8 @@ const Registration = () => {
 			if (response.data != null) {
 			  console.log(registrationData);
 			  alert("Registration data posting was successful!");
-			  console.log("Posting response .... ", response);
 			} else {
 			  alert("Registration data posting ERROR!");
-			  console.log(response.data);
 			}
 		  });
 		}

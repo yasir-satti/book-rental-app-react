@@ -1,4 +1,4 @@
-import { render, fireEvent, shallow, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 // import { debug } from 'webpack';
 import App from './App';
 
@@ -7,36 +7,11 @@ import App from './App';
 describe('Email', () => {
 	test('12. Empty email input form validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		// const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
-		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
+		
 		const validEmailFeedback = getByTestId('validEmailFeedback');
-		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -48,42 +23,15 @@ describe('Email', () => {
 			target: { value: testData['emptyEmailInput'] },
 		});
 		fireEvent.click(pressRegisterButton);
-		console.log(validEmailFeedback);
 		expect(validEmailFeedback).toHaveTextContent('Cannot be blank');
 	});
 
 	test('13. Not valid email input form validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
-		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
 		const validEmailFeedback = getByTestId('validEmailFeedback');
-		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -100,36 +48,10 @@ describe('Email', () => {
 
 	test('14. Valid Email input form validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
-		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
 		const validEmailFeedback = getByTestId('validEmailFeedback');
-		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -148,36 +70,11 @@ describe('Email', () => {
 
 	test('15. Both Email and retype input are empty validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
 		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -197,36 +94,12 @@ describe('Email', () => {
 
 	test('16. Valid Email and empty retype input validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
 
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
 		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -249,36 +122,12 @@ describe('Email', () => {
 
 	test('17. Empty Email and valid email retype input validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
 
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
 		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -301,36 +150,12 @@ describe('Email', () => {
 
 	test('18. Correct emails entered but not matching', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
+		
 		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -353,36 +178,12 @@ describe('Email', () => {
 
 	test('19. Valid Email retype input form validation works', () => {
 		const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
-		const firstNameText = getByTestId('enterFirstName');
-		const middleNamesText = getByTestId('enterMiddleNames');
-		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
-		const address1Text = getByTestId('enterAddress1');
-		const address2Text = getByTestId('enterAddress2');
-		const cityTownText = getByTestId('enterCityTown');
-		const postcodeText = getByTestId('enterPostcode');
-		const passwordText = getByTestId('enterPassword');
-		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
+		
 		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
