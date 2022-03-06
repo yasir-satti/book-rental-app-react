@@ -1,17 +1,15 @@
-import { render, fireEvent, shallow, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 // import { debug } from 'webpack';
 import App from './App';
 
 describe('Registration data submission', () => {
 	test('41. Form data submission is successful', () => {
         const onSubmitMock = jest.fn();
-		const { debug, getByTestId } = render(<App onSubmit={onSubmitMock} />);
+		const { getByTestId } = render(<App onSubmit={onSubmitMock} />);
 
-		const emptyText = '';
 		const firstNameText = getByTestId('enterFirstName');
 		const middleNamesText = getByTestId('enterMiddleNames');
 		const surNameText = getByTestId('enterSurname');
-		// const dateOfBirthValue = getByTestId('enterDateOfBirth')
 		const emailText = getByTestId('enterEmail');
 		const retypeEmailText = getByTestId('retypeEmail');
 		const address1Text = getByTestId('enterAddress1');
@@ -20,21 +18,6 @@ describe('Registration data submission', () => {
 		const postcodeText = getByTestId('enterPostcode');
 		const passwordText = getByTestId('enterPassword');
 		const retypePasswordText = getByTestId('retypePassword');
-
-		const validFirstNameFeedback = getByTestId('validFirstNameFeedback');
-		const validMiddleNameFeedback = getByTestId('validMiddleNameFeedback');
-		const validSurNameFeedback = getByTestId('validSurNameFeedback');
-		// const validDateOfBirthFeedback = getByTestId("validDateOfBirthFeedback");
-		const validEmailFeedback = getByTestId('validEmailFeedback');
-		const validRetypeEmailFeedback = getByTestId('validRetypeEmailFeedback');
-		const validAddres1Feedback = getByTestId('validAddres1Feedback');
-		const validAddres2Feedback = getByTestId('validAddres2Feedback');
-		const validCityTownFeedback = getByTestId('validCityTownFeedback');
-		const validPostcodeFeedback = getByTestId('validPostcodeFeedback');
-		const validPasswordFeedback = getByTestId('validPasswordFeedback');
-		const validRetypePasswordFeedback = getByTestId(
-			'validRetypePasswordFeedback',
-		);
 
 		const pressRegisterButton = getByTestId('pressRegister');
 
@@ -88,16 +71,9 @@ describe('Registration data submission', () => {
 
 		fireEvent.click(pressRegisterButton);
 
-		const handleSubmit = (e) => {
-			e.preventDefault();
-			alert('Thank you for your registration');
-		};
 
 		// // fireEvent.submit(form);
 		// // fireEvent.click(pressRegisterButton);
-		// const wrapper = shallow(<App />);
-		// wrapper.find('form').simulate('submit', handleSubmit);
-		// console.log(wrapper.state('error').value);
 		// // expect(onSubmitMock.handleSubmit).toHaveBeenCalled();
 	});
 });
