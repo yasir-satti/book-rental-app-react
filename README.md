@@ -42,9 +42,26 @@ c) E2E testing with testCafe, selenium and Cypress
 7. Rentals return page
 8. Customer service page
 
+## **Back end app**
+
+1. REST API endpoints for CRUD operations
+2. MyBatis framework for database operations
+
+## **CI pipeline with husky and github actions**
+
+### **1) front-end app**
+
+Husky pre-commit runs with each branch push. Checks linting and run units tests.
+
+### **2) back-end-end app**
+
 ## **Testing tools**
 
-### **Cypress**
+### **1) Front-end app**
+
+#### **Jest for unit tests**
+
+#### **e2e : Cypress**
 
 Steps:
 
@@ -78,7 +95,7 @@ h) on cypress server click on test name to run
 ** cypress commands
 https://docs.cypress.io/api/commands/get
 
-### **TestCafe**
+#### **e2e : TestCafe**
 
 Steps:
 
@@ -90,7 +107,7 @@ $ testcafe {browser_name} {test filename}
 example
 $ testcafe chrome todo.spec.js
 
-### **Selenium**
+#### **e2e : Selenium**
 
 Steps:
 
@@ -105,3 +122,8 @@ d) run a test
 $ node {test filename}
 example
 $ node todo_selenium_test.js
+
+
+### **2) Back-end app**
+
+#### **JUnit**
