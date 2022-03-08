@@ -2,9 +2,11 @@
 
 1. Registration screen
 
-Implementation
-Unit tests (Jest)
-E2E testing with testCafe, selenium and Cypress
+a) Implementation
+
+b) Unit tests (Jest)
+
+c) E2E testing with testCafe, selenium and Cypress
 
 2. Login screen
 3. Page for browse available books for rental
