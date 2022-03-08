@@ -1,4 +1,30 @@
-# Book Rental Service app using React
+# **Book Rental Service app (Front-end using React)**
+
+## **Full app**
+
+This is a book rental service app ( see below for all features of the app ).
+
+The app is made of 
+
+a) this front-end
+
+b) back-end is spring boot https://github.com/yasir-satti/BookRentalAppSpboot
+
+c) mySQL db
+
+## **Run the full app**
+
+a) clone both repos
+
+b) create mySQL db
+
+c) run back-end ( listening on port 8080 )
+
+d) run front-end ( listening on port 3000 )
+
+e) Enter and submit customer registration details
+
+## **Front end app**
 
 1. Registration screen
 
@@ -16,9 +42,9 @@ c) E2E testing with testCafe, selenium and Cypress
 7. Rentals return page
 8. Customer service page
 
-# Testing tools
+## **Testing tools**
 
-## Cypress
+### **Cypress**
 
 Steps:
 
@@ -52,7 +78,7 @@ h) on cypress server click on test name to run
 ** cypress commands
 https://docs.cypress.io/api/commands/get
 
-## TestCafe
+### **TestCafe**
 
 Steps:
 
@@ -64,7 +90,7 @@ $ testcafe {browser_name} {test filename}
 example
 $ testcafe chrome todo.spec.js
 
-## Selenium
+### **Selenium**
 
 Steps:
 
