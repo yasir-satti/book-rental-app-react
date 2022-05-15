@@ -123,6 +123,29 @@ $ node {test filename}
 example
 $ node todo_selenium_test.js
 
+#### **e2e : Python Behave BDD**
+
+a) To install python behave 
+
+i - activate virtual environment
+
+ii - run
+
+$ pip3 install behave
+
+b) To run tests
+
+i - to run all tests
+
+$ behave
+
+ii - to run specific test or tests specify tag in test file
+
+$ bahve --tags=<tag_name>
+
+To learn more about python behave goto below link
+
+https://behave.readthedocs.io/en/latest/tutorial.html
 
 ### **2) Back-end app**
 
