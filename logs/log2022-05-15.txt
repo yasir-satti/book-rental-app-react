@@ -1,0 +1,4 @@
+2022-05-15 00:01:53,264 - BasePage.py:[21] - [INFO] - Opened url http://localhost:3000/registration
+2022-05-15 00:09:21,172 - BasePage.py:[22] - [INFO] - Opened url http://localhost:3000/registration
+2022-05-15 19:03:41,254 - BasePage.py:[22] - [INFO] - Opened url http://localhost:3000/registration
+2022-05-15 19:23:27,691 - BasePage.py:[22] - [INFO] - Opened url http://localhost:3000/registration

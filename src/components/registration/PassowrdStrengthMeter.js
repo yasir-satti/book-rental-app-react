@@ -5,22 +5,15 @@ const PasswordStrengthMeter = (props) => {
 	const { password } = props;
 	const testedResult = zxcvbn(password);
 
-	const createPasswordLabel = (result) => {
-		switch (result.score) {
-			case 0:
-				return 'Weak';
-			case 1:
-				return 'Weak';
-			case 2:
-				return 'Fair';
-			case 3:
-				return 'Good';
-			case 4:
-				return 'Strong';
-			default:
-				return 'Weak';
-		}
-	};
+	const labelTypes = {
+		0: 'Weak',
+		1: 'Weak',
+		2: 'Fair',
+		3: 'Good',
+		4: 'Strong'
+	}
+
+	const createPasswordLabel = ({score}) => labelTypes[score] ? labelTypes[score] : 'Weak';
 
 	return (
 		<>
