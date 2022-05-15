@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import App from './App';
+import App from '../app/App';
 
 describe('Addresse, city/Town and postcode', () => {
 	test('20. Address 1 value cannot be blank', () => {
