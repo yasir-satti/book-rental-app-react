@@ -6,10 +6,8 @@ import json
 
 @step('I make "{action}" call')
 def step_impl(context, action):
-    # build api endpoint (url, headers, content type)
     apiBaseUrl = context.config.userdata['apiBaseUrl']
     headers = {'content-type': context.config.userdata['contentType']}
-    # build body based on action type
     id = '63'
     if action == 'create':
         body = {
@@ -43,16 +41,7 @@ def step_impl(context, action):
     if action == 'delete':
         body = {}
         url = apiBaseUrl + 'registration/' + id
-    # send request
-    print('api endpoint url ...' + action)
-    print(url)
     context.response = callApi(url, body, headers, action)
-    print('context.response...')
-    print(context.response)
-    print(context.response)
-    # capture create response with new ID
-    # if action == 'create':
-    #     context.responseBody = json.loads(context.response.content)
 
     
 @step('I should get a response with status code "{status_code}"')
