@@ -5,12 +5,17 @@
 /.pnp
 .pnp.js
 
+__pycache__/
+*.py[cod]
+*.pyc
+
 # testing
 /coverage
 /cypress/integration/samples
 
 # production
 /build
+Logs/*
 
 # misc
 .DS_Store

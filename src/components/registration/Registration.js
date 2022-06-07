@@ -1,6 +1,6 @@
 import { Button, Col, Form, Image, Row } from 'react-bootstrap';
 import { useState } from 'react';
-import axios from "axios";
+import axios from 'axios';
 
 import splash_image from '../../assets/image_book.jpeg';
 import '../app/App.css';
@@ -35,31 +35,32 @@ const Registration = () => {
 		e.preventDefault();
 		const newErrors = findFormErrors(form);
 		if (Object.keys(newErrors).length > 0) {
-		  setErrors(newErrors);
+			setErrors(newErrors);
 		} else {
-		  alert("Thank you for your registration");
-		  const registrationUrl = "http://localhost:8080/api/registration";
-		  const registrationData = {
-			firstName: form.firstName,
-			middleNames: form.middleNames,
-			surName: form.surName,
-			email: form.email,
-			address1: form.address1,
-			address2: form.address2,
-			cityTown: form.cityTown,
-			postcode: form.postcode,
-			password: form.password,
-		  };
-		  axios.post(registrationUrl, registrationData).then((response) => {
-			if (response.data != null) {
-			  console.log(registrationData);
-			  alert("Registration data posting was successful!");
-			} else {
-			  alert("Registration data posting ERROR!");
-			}
-		  });
+			// alert('Thank you for your registration');
+			const registrationUrl = 'http://localhost:8080/api/registration';
+			const registrationData = {
+				firstName: form.firstName,
+				middleNames: form.middleNames,
+				surName: form.surName,
+				email: form.email,
+				address1: form.address1,
+				address2: form.address2,
+				cityTown: form.cityTown,
+				postcode: form.postcode,
+				password: form.password,
+			};
+			axios.post(registrationUrl, registrationData);
+			//   .then((response) => {
+			// 	if (response.data != null) {
+			// 	  console.log(registrationData);
+			// 	  alert("Registration data posting was successful!");
+			// 	} else {
+			// 	  alert("Registration data posting ERROR!");
+			// 	}
+			//   });
 		}
-	  };
+	};
 
 	return (
 		<>
@@ -163,7 +164,7 @@ const Registration = () => {
 							<Datepicker
 								data-testid="enterDateOfBirth"
 								// onChange={(e) => { setField("dateOfBirth", e.target.value)} }
-								// handleChangeProps={setField} 
+								// handleChangeProps={setField}
 								// handleChangeProps{ (e) => { setField("dateOfBirth", e.target.value) }}
 								isInvalid={!!errors.dateOfBirth}
 							/>
@@ -332,7 +333,7 @@ const Registration = () => {
 						id="submit"
 						variant="outline-info"
 						size="lg"
-						text="Register"
+						text="Submit"
 						className="button"
 						type="submit"
 						data-testid="pressRegister"

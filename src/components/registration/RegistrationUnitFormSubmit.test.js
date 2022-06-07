@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 // import { debug } from 'webpack';
-import App from './App';
+import App from '../app/App';
 
 describe('Registration data submission', () => {
 	test('41. Form data submission is successful', () => {
