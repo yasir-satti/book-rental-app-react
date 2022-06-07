@@ -10,7 +10,7 @@ class InputRegistrationPage(CommonPage):
         super().__init__(driver)
         
     
-    def enterData(self, context, valueKey, locator):
+    def enterData(self, valueKey, locator):
         el = self.driver.find_element_by_xpath(locator)
         actions = ActionChains(self.driver)
         actions.click(el).perform()

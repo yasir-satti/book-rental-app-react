@@ -20,4 +20,4 @@ def step_impl(context):
 	    "retypePasswordInput": locatorsRegistration["formRetypePasswordInput_XPATH"]
 	}
     for key in fieldXpath:
-        context.inputRegistrationPage.enterData(context, key, fieldXpath[key])
+        context.inputRegistrationPage.enterData(key, fieldXpath[key])
