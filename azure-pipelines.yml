@@ -11,11 +11,16 @@ pool:
 
 steps:
 - task: NodeTool@0
+  displayName: 'Install Node.js'
   inputs:
     versionSpec: '10.x'
-  displayName: 'Install Node.js'
   
- - task: PublishBuildArtifacts@1    
+- script: |
+  pwd
+  ls -la
+  ls -la $(build.artifactstagingdirectory)
+
+- task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
