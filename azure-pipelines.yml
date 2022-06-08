@@ -15,10 +15,14 @@ steps:
   inputs:
     versionSpec: '10.x'
   
-- script: |
-  pwd
-  ls -la
-  ls -la $(build.artifactstagingdirectory)
+- name: PWD
+  run: pwd
+  
+ - name: PWD content
+   run: ls -la
+   
+ - name: publish directory content
+   run: ls -la $(build.artifactstagingdirectory)
 
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
