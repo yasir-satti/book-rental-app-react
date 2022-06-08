@@ -18,12 +18,12 @@ steps:
 - script: |
     pwd
     ls -la
-    ls -la  $(build.artifactstagingdirectory)
+    ls -la  $(System.DefaultWorkingDirectory)
 
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
 
 - script: |
     npm install
