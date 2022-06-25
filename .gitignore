@@ -14,7 +14,7 @@ __pycache__/
 /cypress/integration/samples
 
 # production
-/build
+# /build
 Logs/*
 
 # misc
@@ -27,3 +27,7 @@ Logs/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# IDE
+.vscode/
+.deployment
