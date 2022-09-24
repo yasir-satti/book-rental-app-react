@@ -38,7 +38,8 @@ const Registration = () => {
 			setErrors(newErrors);
 		} else {
 			// alert('Thank you for your registration');
-			const registrationUrl = 'http://localhost:8080/api/registration';
+			// const registrationUrl = 'http://localhost:8080/api/registration';
+			const registrationUrl = 'https://bookrentalapp-env.eba-tm4bqfi2.eu-west-2.elasticbeanstalk.com/api/registration';
 			const registrationData = {
 				firstName: form.firstName,
 				middleNames: form.middleNames,
