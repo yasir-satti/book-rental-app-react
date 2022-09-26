@@ -93,6 +93,8 @@ const Registration = () => {
 
 				<Image src={splash_image} fluid alt="logo" />
 				<p>Book Rental Service</p>
+				<p>Book Rental Service</p>
+
 
 				<p>Register</p>
 
