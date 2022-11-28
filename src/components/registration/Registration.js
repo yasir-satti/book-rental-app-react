@@ -39,7 +39,7 @@ const Registration = () => {
 		} else {
 			// alert('Thank you for your registration');
 			// const registrationUrl = 'http://localhost:5001/api/registration';
-			const registrationUrl = 'https://env-backendbookrentalapp.eba-mmucheux.eu-west-2.elasticbeanstalk.com/api/registration';
+			const registrationUrl = 'http://env-backendbookrentalapp.eba-mmucheux.eu-west-2.elasticbeanstalk.com/api/registration';
 			const registrationData = {
 				firstName: form.firstName,
 				middleNames: form.middleNames,
