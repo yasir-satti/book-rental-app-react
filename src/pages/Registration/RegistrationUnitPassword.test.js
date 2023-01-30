@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import App from '../app/App';
+import App from '../../components/app/App';
 
 describe('Password', () => {
 	test('34. Password Cannot be blank', () => {

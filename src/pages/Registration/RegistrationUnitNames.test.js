@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 // import { debug } from 'webpack';
-import App from '../app/App';
+import App from '../../components/app/App';
 
 // const form = getByTestId("form");
 

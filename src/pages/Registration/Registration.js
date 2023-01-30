@@ -2,13 +2,12 @@ import { Button, Col, Form, Image, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import axios from 'axios';
 
-import splash_image from '../../assets/image_book.jpeg';
-import '../app/App.css';
-import '../app/App.scss';
+import '../../components/app/App.css';
+import '../../components/app/App.scss';
 
-import findFormErrors from './FindFormErrors';
+import findFormErrors from '../../pages/Registration/FindFormErrors';
 import Datepicker from './DatePicker';
-import PasswordStrengthMeter from './PassowrdStrengthMeter';
+import PasswordStrengthMeter from '../../pages/Registration/PassowrdStrengthMeter';
 
 const Registration = () => {
 	const [form, setForm] = useState({});
@@ -91,10 +90,7 @@ const Registration = () => {
 					crossOrigin="anonymous"
 				></script>
 
-				<Image src={splash_image} fluid alt="logo" />
 				<p>Book Rental Service</p>
-				<p>Book Rental Service</p>
-
 
 				<p>Register</p>
 
