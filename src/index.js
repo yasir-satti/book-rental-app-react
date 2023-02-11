@@ -1,16 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './components/app/App';
-// import App2 from './components/app/App2';
 import ErrorBoundary from './components/app/ErrorBoundary';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
 	<React.StrictMode>
 		<ErrorBoundary>
-			<App />
-			{/* <App2 /> */}
+			<App tab='home' />
 		</ErrorBoundary>
-	</React.StrictMode>,
-	document.getElementById('root'),
+	</React.StrictMode>
 );
