@@ -1,0 +1,50 @@
+/* vars */
+
+:root {
+    --very-pink: #de007b;
+    --button-grey: #333333;
+    --card-text: #222222;
+    --card-border: #dddddd;
+  }
+  .site-content-layout {
+    background: #fff;
+  }
+  
+  .primary-btn, .primary-btn:hover, .primary-btn:focus {
+    height: 48px;
+    border-radius: 6px;
+    background: var(--very-pink);
+    color: white;
+  }
+  
+  .secondary-btn, .secondary-btn:hover, .secondary-btn:focus {
+    height: 48px;
+    border: 2px solid var(--button-grey);
+    border-radius: 6px;
+    color: var(--button-grey);
+  }
+  
+  .title-h1 {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Poppins', 'sans-serif';
+  }
+  
+  .title-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+  
+  .mov-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--card-text);
+  }
+  
+  .mov-field {
+    font-size: 16px;
+    color: var(--card-text);
+  }
+  

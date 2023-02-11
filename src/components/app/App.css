@@ -4,27 +4,12 @@
 }
 
 .site-content-layout {
-  background: white;
+  background: rgb(12, 223, 167);
 }
 
 .brand {
   font-size: 2.3rem;
   text-justify: right;
-}
-
-.brand-logo {
-  height: 50px;
-  width: 50px;
-}
-
-.sign-in {
-  font-size: 1.3rem;
-  text-justify: left;
-}
-
-.hamburger {
-  size: 28px;
-  margin-right: 20;
 }
 
 .App {
