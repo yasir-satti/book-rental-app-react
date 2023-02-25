@@ -2,7 +2,7 @@ import { type RegistrationFormData } from '../pages/RegistrationPage/Registratio
 
 // const URL = 'http://localhost:5001/api/registration';
 const URL =
-	'http://env-backendbookrentalapp.eba-mmucheux.eu-west-2.elasticbeanstalk.com/api/registration';
+	'https://env-backendbookrentalapp.eba-mmucheux.eu-west-2.elasticbeanstalk.com/api/registration';
 
 const headers = {
 	'Content-Type': 'application/json',
