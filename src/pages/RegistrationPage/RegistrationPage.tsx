@@ -14,7 +14,11 @@ const RegistrationPage = () => {
 	});
 
     const onSubmit = async (data: RegistrationFormData) => {
-        await apiService.create(data);
+		try {
+			await apiService.create(data);
+		} catch (e: unknown) {
+			alert(e)
+		}
     };
 
 	return (
@@ -94,7 +98,7 @@ const RegistrationPage = () => {
 					<label>Postcode</label>
 				</div>
 				<input
-					aria-label='postCode'
+					aria-label='postcode'
 					type="text"
 					placeholder={'placeholder'}
 					{...register('postcode')}
@@ -115,7 +119,7 @@ const RegistrationPage = () => {
 				</div>
 				<input
 					aria-label='password'
-					type="password"
+					type='text'
 					placeholder={'placeholder'}
 					{...register('password')}
 				></input>
@@ -125,7 +129,7 @@ const RegistrationPage = () => {
 				</div>
 				<input
 					aria-label='confirmPassword'
-					type="password"
+					type='text'
 					placeholder={'placeholder'}
 					{...register('confirmPassword')}
 				></input>

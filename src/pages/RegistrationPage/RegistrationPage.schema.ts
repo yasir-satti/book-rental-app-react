@@ -33,7 +33,11 @@ export const RegistrationPageSchema = yup.object({
                 .min(2, 'CityTown must be at least 2 characters')
                 .max(30, 'CityTwn must not exceed 30 characters'),
     postcode: yup.string()
-                .required('Postcode is required'),
+                .required('Postcode is required')
+                .matches(
+                    /[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/,
+                    'Post code must confirm to UK post code format with letters in CAPITAL'
+                ),
     password: yup.string()
                 .required('Password is required'),
                 // .matches(
