@@ -1,24 +1,22 @@
-import { RegistrationFormData } from "../pages/RegistrationPage/RegistrationPage.schema";
+import { type RegistrationFormData } from '../pages/RegistrationPage/RegistrationPage.schema';
 
 const URL = 'http://localhost:5001/api/registration';
 // const URL = 'http://env-backendbookrentalapp.eba-mmucheux.eu-west-2.elasticbeanstalk.com/api/registration';
 
 const headers = {
-    'Content-Type': 'application/json',
+	'Content-Type': 'application/json',
 };
 
 const apiService = {
-    create: async (payload: Partial<RegistrationFormData>) => {
-        const response = await fetch(URL, {
-            method: 'POST',
-            headers,
-            body: JSON.stringify(payload),
-        });
-        return await response.json();
-    },
-}
-
-
+	create: async (payload: Partial<RegistrationFormData>) => {
+		const response = await fetch(URL, {
+			method: 'POST',
+			headers,
+			body: JSON.stringify(payload),
+		});
+		return await response.json();
+	},
+};
 
 // import { RegistrationFormData } from "../pages/RegistrationPage/RegistrationPage.schema";
 // import axios from 'axios';

@@ -1,35 +1,35 @@
-import { Selector } from 'testcafe';
+import { Selector } from 'testcafe'
 // import fixture from "testcafe";
 
-fixture`Getting Started`.page`http://localhost:3000`;
+fixture`Getting Started`.page`http://localhost:3000`
 
 const testData = {
-	firstNameInput: 'Yasir',
-	middleNamesInput: 'Kamal M H',
-	surnameInput: 'Satti',
-	emailInput: 'y@and.digial',
-	retypeEmailInput: 'y@and.digial',
-	address1Input: 'Bloc',
-	address2Input: '17 Marble Street',
-	cityTownInput: 'Manchester',
-	postcodeInput: 'M2 3WA',
-	passwordInput: '12039eU2js92#',
-	retypePasswordInput: '12039eU2js92#',
-};
+  firstNameInput: 'Yasir',
+  middleNamesInput: 'Kamal M H',
+  surnameInput: 'Satti',
+  emailInput: 'y@and.digial',
+  retypeEmailInput: 'y@and.digial',
+  address1Input: 'Bloc',
+  address2Input: '17 Marble Street',
+  cityTownInput: 'Manchester',
+  postcodeInput: 'M2 3WA',
+  passwordInput: '12039eU2js92#',
+  retypePasswordInput: '12039eU2js92#'
+}
 
-const firstNameSelector = Selector('#formFirstName');
-const middletNamesSelector = Selector('#formMiddleNames');
-const surnameSelector = Selector('#formSurname');
-const emailSelector = Selector('#formEmail');
-const retypeEmailSelector = Selector('#formRetypeEmail');
-const address1Selector = Selector('#Address1');
-const address2Selector = Selector('#Address2');
-const cityTownSelector = Selector('#CityTown');
-const postcodeSelector = Selector('#Postcode');
-const passwordSelector = Selector('#formPassword');
-const retypePasswordSelector = Selector('#formRetypePassword');
+const firstNameSelector = Selector('#formFirstName')
+const middletNamesSelector = Selector('#formMiddleNames')
+const surnameSelector = Selector('#formSurname')
+const emailSelector = Selector('#formEmail')
+const retypeEmailSelector = Selector('#formRetypeEmail')
+const address1Selector = Selector('#Address1')
+const address2Selector = Selector('#Address2')
+const cityTownSelector = Selector('#CityTown')
+const postcodeSelector = Selector('#Postcode')
+const passwordSelector = Selector('#formPassword')
+const retypePasswordSelector = Selector('#formRetypePassword')
 
-const pressRegisterSelector = Selector(`[data-testid="pressRegister"]`);
+const pressRegisterSelector = Selector('[data-testid="pressRegister"]')
 
 // test("Validates First name input", async (t) => {
 //   await t
@@ -109,18 +109,18 @@ const pressRegisterSelector = Selector(`[data-testid="pressRegister"]`);
 // });
 
 test('Validate Submit registration data', async (t) => {
-	await t
-		.typeText(firstNameSelector, testData.firstNameInput)
-		.typeText(middletNamesSelector, testData.middleNamesInput)
-		.typeText(surnameSelector, testData.surnameInput)
-		.typeText(emailSelector, testData.emailInput)
-		.typeText(retypeEmailSelector, testData.retypeEmailInput)
-		.typeText(address1Selector, testData.address1Input)
-		.typeText(address2Selector, testData.address2Input)
-		.typeText(cityTownSelector, testData.cityTownInput)
-		.typeText(postcodeSelector, testData.postcodeInput)
-		.typeText(passwordSelector, testData.passwordInput)
-		.typeText(retypePasswordSelector, testData.retypePasswordInput)
-		.click(pressRegisterSelector);
-});
+  await t
+    .typeText(firstNameSelector, testData.firstNameInput)
+    .typeText(middletNamesSelector, testData.middleNamesInput)
+    .typeText(surnameSelector, testData.surnameInput)
+    .typeText(emailSelector, testData.emailInput)
+    .typeText(retypeEmailSelector, testData.retypeEmailInput)
+    .typeText(address1Selector, testData.address1Input)
+    .typeText(address2Selector, testData.address2Input)
+    .typeText(cityTownSelector, testData.cityTownInput)
+    .typeText(postcodeSelector, testData.postcodeInput)
+    .typeText(passwordSelector, testData.passwordInput)
+    .typeText(retypePasswordSelector, testData.retypePasswordInput)
+    .click(pressRegisterSelector)
+})
 // // .expect(firstNameInputNameExists).ok()
