@@ -1,22 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import {
-	type RegistrationFormData,
-	RegistrationPageSchema,
-} from './RegistrationPage.schema';
+import { type SignUpFormData, SignUpPageSchema } from './SignUpPage.schema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import apiService from '../../utils/apiService';
 
-const RegistrationPage = () => {
+const SignUpPage = () => {
 	const {
 		register,
 		formState: { errors },
 		handleSubmit,
-	} = useForm<RegistrationFormData>({
-		resolver: yupResolver(RegistrationPageSchema),
+	} = useForm<SignUpFormData>({
+		resolver: yupResolver(SignUpPageSchema),
 	});
 
-	const onSubmit = async (data: RegistrationFormData) => {
+	const onSubmit = async (data: SignUpFormData) => {
 		try {
 			await apiService.create(data);
 		} catch (e: unknown) {
@@ -149,4 +146,4 @@ const RegistrationPage = () => {
 	);
 };
 
-export default RegistrationPage;
+export default SignUpPage;

@@ -1,0 +1,29 @@
+.header {
+    padding: 52px 143px 0 76px;
+    align-items: center;
+}
+
+.brand-logo {
+    padding-right: 30px;
+    cursor: pointer;
+    width: 130px;
+}
+
+.brand-title {
+    height: 50px;
+    width: 50px;
+}
+
+.title-welcome {
+    display: grid;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.sign-in-text {
+    font-size: 1.3rem;
+    text-justify: right;
+}

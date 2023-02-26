@@ -1,4 +1,4 @@
-import { type RegistrationFormData } from '../pages/RegistrationPage/RegistrationPage.schema';
+import { type SignUpFormData } from '../pages/SignUpPage/SignUpPage.schema';
 
 // const URL = 'http://localhost:5001/api/registration';
 const URL =
@@ -9,7 +9,7 @@ const headers = {
 };
 
 const apiService = {
-	create: async (payload: Partial<RegistrationFormData>) => {
+	create: async (payload: Partial<SignUpFormData>) => {
 		const response = await fetch(URL, {
 			method: 'POST',
 			headers,

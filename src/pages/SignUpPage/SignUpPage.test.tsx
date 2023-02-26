@@ -1,14 +1,14 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
-import RegistrationPage from './RegistrationPage';
+import SignUpPage from './SignUpPage';
 
 beforeEach(() => {
-	render(<RegistrationPage />);
+	render(<SignUpPage />);
 });
 
 afterEach(cleanup);
 
-test('1. Registration page form fields should be empty when the page is first loaded', () => {
+test('1. Sign Up page form fields should be empty when the page is first loaded', () => {
 	const firstNameText = screen.getByRole('textbox', { name: 'firstName' });
 	const middleNameText = screen.getByRole('textbox', { name: 'middleName' });
 	const surNameText = screen.getByRole('textbox', { name: 'surName' });
