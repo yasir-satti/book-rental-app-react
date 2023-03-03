@@ -1,25 +1,31 @@
 import React from 'react';
-import { Col, Image, Row, Typography } from 'antd';
+import { Col, Image, Layout, Row } from 'antd';
 import { Header } from 'antd/es/layout/layout';
+import Title from 'antd/es/typography/Title';
 
-const brandLogo: string = '../../assets/image_book.jpeg';
+const brandLogo: string = '../../../assets/book_rental_image_00.png';
 
 const HeaderBar = () => {
-	const { Text } = Typography;
 	return (
-		<Header className="header">
-			<Row justify="space-between">
-				<Col>
-					<Row>
-						<Col>
-							<Image width={50} src={brandLogo} className="brand-logo" />
-						</Col>
-						<Col className="header">
-							<Text className="brand-title">Book Rentall App</Text>
-						</Col>
-					</Row>
-				</Col>
-			</Row>
+		<Header>
+			<Layout className="header">
+				<Row>
+					<Col>
+						<Row>
+							<Col>
+								<Image
+									width={50}
+									src={brandLogo}
+									// className="brand-logo"
+								></Image>
+							</Col>
+							<Col>
+								<Title className="brand-title">Book Rentall App</Title>
+							</Col>
+						</Row>
+					</Col>
+				</Row>
+			</Layout>
 		</Header>
 	);
 };
