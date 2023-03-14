@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const RegistrationPageSchema = yup.object({
+export const SignUpPageSchema = yup.object({
 	firstName: yup
 		.string()
 		.required('First name is required')
@@ -58,4 +58,4 @@ export const RegistrationPageSchema = yup.object({
 		.oneOf([yup.ref('password')], 'Confirm Password does not match'),
 });
 
-export type RegistrationFormData = yup.InferType<typeof RegistrationPageSchema>;
+export type SignUpFormData = yup.InferType<typeof SignUpPageSchema>;

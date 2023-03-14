@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&display=swap');
+
+.brand-logo {
+	justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.brand-title {
+	justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+	background-color: darksalmon;
+	display: flex;
+	flex-direction: row;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+	font-family: 'Rubik', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar {
+	width: 200px;
+	background-color: rgb(229, 181, 22);
+	color: aquamarine;
+	padding-top: 200px;
+	padding-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+	height: 60;
+	background-color: rgb(196, 169, 220);
+	color: antiquewhite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.footer {
+	height: 60px;
+	background-color: aqua;
+	color: antiquewhite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.sign-in-text {
 }
